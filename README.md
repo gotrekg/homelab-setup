@@ -36,9 +36,6 @@ I have also added support for Authelia, which is a second factor authentication 
 - authelia_admin_mail: email of the authelia admin user
 - authelia_admin_argon2id: argon2id hash of the password for admin user, see how to generate one in the [Authelia docs](https://www.authelia.com/reference/guides/passwords/)
 
-## Blog post
-
-I have written a blog post about this repo, you can find it here: [https://www.rishavnandi.com/posts/Ansible_homelab](https://www.rishavnandi.com/posts/Ansible_homelab)
 
 ## Usage
 
@@ -68,25 +65,4 @@ If you don't want to run some of the apps, you can easily remove them from the `
 
 If you want to learn more about any of the apps, you can check out the [awesome selfhosted repo](https://github.com/awesome-selfhosted/awesome-selfhosted).
 
-## Included Terraform script
 
-I have included a Terraform script that I use to quickly spin up an AWS instance to run the playbook on. You can use this script to spin up an instance, or you can use it as a reference to create your own Terraform script.
-You can find more info about using Terraform with AWS here: [https://learn.hashicorp.com/tutorials/terraform/aws-build](https://learn.hashicorp.com/tutorials/terraform/aws-build)
-
-## Goals
-
-- [x] Add support for Ubuntu 22.04
-- [x] Add support for Debian 11
-- [x] Add support for RedHat based distros (Fedora, CentOS)
-- [x] Find a permanent fix for the Docker install issue on Ubuntu 22.04
-
-## Credits
-
-- [Jeff Geerling](https://www.jeffgeerling.com/) for all the awesome Ansible content
-- [linuxserver.io](https://linuxserver.io/) for the Docker containers
-- [Ansible docs](https://docs.ansible.com/ansible/latest/) for the Ansible documentation
-- [Wolfgang's infra repo](https://github.com/notthebee/infra) for the Docker install fix for Ubuntu 22.04
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=rishavnandi/ansible_homelab&type=Date)](https://star-history.com/#rishavnandi/ansible_homelab&Date)
