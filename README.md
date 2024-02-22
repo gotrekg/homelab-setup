@@ -52,7 +52,7 @@ git clone https://github.com/rishavnandi/ansible_homelab.git
 - Run the playbook
 
 ```bash
-ansible-playbook main.yml
+ansible-playbook main.yml -kK
 ```
 
 You'll notice that for most apps the ports are not exposed, as I prefer exposing only the neccessary ports and for the rest I add them to a custom Docker network and then use nginx proxy manager to access the apps, a benefit of putting all the containers on a custom Docker network is that you can reference them in nginx proxy manager using their container name instead of the IP address, which makes it easier to manage.
