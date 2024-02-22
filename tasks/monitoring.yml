@@ -48,8 +48,6 @@
       - prometheus-data:/prometheus
     restart_policy: unless-stopped
     command: "--config.file=/etc/prometheus/prometheus.yml"
-    networks:
-      - name: homelab
 
 - name: Create node exporter container
   community.docker.docker_container:
@@ -62,8 +60,6 @@
     command: "--path.rootfs=/host"
     volumes:
       - /:/host:ro,rslave
-    networks:
-      - name: homelab
 
 - name: Get cadvisor latest release
   community.general.github_release:
@@ -88,8 +84,6 @@
       - /dev/disk/:/dev/disk:ro
     devices:
       - /dev/kmsg
-    networks:
-      - name: homelab
 
 - name: Create grafana container
   community.docker.docker_container:
@@ -100,18 +94,3 @@
     restart_policy: unless-stopped
     volumes:
       - grafana-data:/var/lib/grafana
-    networks:
-      - name: homelab
-    labels:
-      traefik.enable: "true"
-      traefik.http.routers.grafana.entrypoints: "http"
-      traefik.http.routers.grafana.rule: "Host(`grafana.{{ domain }}`)"
-      traefik.http.middlewares.grafana-https-redirect.redirectscheme.scheme: "https"
-      traefik.http.routers.grafana.middlewares: "grafana-https-redirect"
-      traefik.http.routers.grafana-secure.entrypoints: "https"
-      traefik.http.routers.grafana-secure.rule: "Host(`grafana.{{ domain }}`)"
-      traefik.http.routers.grafana-secure.tls: "true"
-      traefik.http.routers.grafana-secure.service: "grafana"
-      traefik.http.routers.grafana-secure.middlewares: "authelia@docker"
-      traefik.http.services.grafana.loadbalancer.server.port: "3000"
-      traefik.docker.network: "homelab"

@@ -17,11 +17,7 @@
         - duplicati
         - filebrowser
         - guacamole
-        - heimdall
         - homarr
-        - jellyfin
-        - jellyseerr
-        - monitoring
         - portainer
         - prowlarr
         - qbittorrent
@@ -31,7 +27,6 @@
         - syncthing
         - unmanic
         - uptime_kuma
-        - vaultwarden
         - watchtower
         - wireguard
 
