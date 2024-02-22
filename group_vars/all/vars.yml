@@ -1,8 +1,8 @@
 ---
 username: "<username>"
 
-docker_dir: /mnt/mounting_point/docker_apps
-data_dir: /mnt/mounting_point/data
+docker_dir: /mnt/storage/docker_apps
+data_dir: /mnt/storage/data
 
 puid: "<puid>"
 
