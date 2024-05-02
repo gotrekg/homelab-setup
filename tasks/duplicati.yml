@@ -6,13 +6,13 @@
     pull: true
     state: started
     ports:
-      - 8200:8200
+      - "8200:8200"
     restart_policy: unless-stopped
     volumes:
       - "{{ docker_dir }}/duplicati/config:/config"
       - "{{ docker_dir }}/duplicati/backups:/backups"
       - "/:/source"
     env:
-      PUID: "0"
-      PGID: "0"
+      PUID: "1000"
+      PGID: "1000"
       TZ: "{{ timezone }}"

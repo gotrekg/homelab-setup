@@ -6,7 +6,7 @@
     pull: true
     state: started
     ports:
-      - 8877:8080
+      - "8877:8080"
     restart_policy: unless-stopped
     volumes:
       - "{{ docker_dir }}/guacamole/config:/config"

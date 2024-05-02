@@ -7,7 +7,7 @@
     state: started
     restart_policy: unless-stopped
     ports:
-      - 8384:8384 
+      - "8384:8384" 
       - "22000:22000"
       - "22000:22000/udp"
       - "21027:21027/udp"

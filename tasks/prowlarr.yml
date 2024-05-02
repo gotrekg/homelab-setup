@@ -13,4 +13,4 @@
     volumes:
       - "{{ docker_dir }}/prowlarr/config:/config"
     ports:
-      - 9696:9696
+      - "9696:9696"

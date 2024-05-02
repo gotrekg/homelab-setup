@@ -7,7 +7,7 @@
     state: started
     restart_policy: unless-stopped
     ports:
-     -  8888:8888
+     -  "8888:8888"
     env:
       PUID: "{{ puid }}"
       PGID: "{{ pgid }}"
