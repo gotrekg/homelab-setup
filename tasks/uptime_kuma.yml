@@ -7,7 +7,7 @@
     state: started
     restart_policy: unless-stopped
     ports:
-      - "3001:3001"
+      - "3003:3001"
     volumes:
       - "{{ docker_dir }}/uptime_kuma/data:/app/data"
     security_opts:
