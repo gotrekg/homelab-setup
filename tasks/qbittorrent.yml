@@ -1,6 +1,6 @@
 ---
 - name: Get latest release of vuetorrent
-  community.general.github_release:
+ community.general.github_release:
     user: "WDaan"
     repo: "VueTorrent"
     action: latest_release
@@ -28,9 +28,11 @@
       - "8080:8080"
     volumes:
       - "{{ docker_dir }}/qbittorrent/config:/config"
-      - "{{ data_dir }}/torrents:/data/torrents"
+      - "{{ data_dir }}/torrents:/downloads"
       - "{{ docker_dir }}/qbittorrent/vuetorrent:/vuetorrent"
     env:
       PUID: "{{ puid }}"
       PGID: "{{ pgid }}"
       TZ: "{{ timezone }}"
+
+ 
