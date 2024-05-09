@@ -1,0 +1,25 @@
+---
+- name: Create webtop container
+  community.docker.docker_container:
+    name: webtop
+    image: lscr.io/linuxserver/webtop:latest
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    env:
+      PUID: "{{ puid }}"
+      PGID: "{{ pgid }}"
+      TZ: "{{ timezone }}"
+      SUBFOLDER: "/"
+      TITLE: "Webtop"
+    devices:
+      - "/dev/dri:/dev/dri"
+    shm_size: "2gb"       
+    volumes:
+      - "{{ docker_dir }}/webtop/config:/config"
+      - "/var/run/docker.sock:/var/run/docker.sock"
