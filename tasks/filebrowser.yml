@@ -12,7 +12,7 @@
 - name: Create file browser container
   community.docker.docker_container:
     name: filebrowser
-    image: filebrowser/filebrowser
+    image: hurlenko/filebrowser
     env:
       PUID: "{{ puid }}"
       PGID: "{{ pgid }}"
