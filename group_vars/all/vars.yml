@@ -22,7 +22,10 @@ packages:
   - git
   - python3
   - python3-pip
-  - mutt
+  - smartmontools
+  - python3-markdown 
+  - jq
+  - bc
 
 pip_packages:
   - ansible
