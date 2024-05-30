@@ -11,7 +11,7 @@
       - "8080:8080"
     volumes:
       - "{{ docker_dir }}/qbittorrent/config:/config"
-      - "{{ data_dir }}/torrents:/downloads"
+      - "{{ data_dir }}/torrents:/data/torrents"
       - "{{ docker_dir }}/qbittorrent/vuetorrent:/vuetorrent"
     env:
       PUID: "{{ puid }}"

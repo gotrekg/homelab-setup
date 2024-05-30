@@ -16,6 +16,10 @@
         - dashdot
         - duplicati
         - filebrowser
+<<<<<<< HEAD
+        - webtop
+=======
+>>>>>>> 6c7a48e3589392ea0b58f4d3272bd47ba083ade4
         - homarr
         - portainer
         - prowlarr
