@@ -48,8 +48,8 @@
     state: present
 
 - name: Install pip packages
-  ansible.builtin.pip:
-    name: "{{ pip_packages }}"
+  community.general.pipx:
+    name: "{{ pipx_packages }}"
     state: present
 
 - name: Create Docker directory
