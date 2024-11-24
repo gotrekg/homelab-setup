@@ -27,7 +27,7 @@ packages:
   - jq
   - bc
 
-pip_packages:
+pipx_packages:
   - ansible
   - github3.py
   - docker
