@@ -19,7 +19,7 @@
     pull: true
     state: started
     ports:
-      - "8866:80"
+      - "8866:8080"
     volumes:
       - "/:/srv"
       - "{{ docker_dir }}/filebrowser/filebrowser.db:/database.db"
