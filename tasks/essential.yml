@@ -46,11 +46,22 @@
   ansible.builtin.package:
     name: "{{ packages }}"
     state: present
+    
+- name: Create directory for virtual environment
+  ansible.builtin.file:
+    path: /opt/myenv
+    state: directory
+    mode: '0755'
+
+- name: Create a Python virtual environment
+  ansible.builtin.command:
+    cmd: python3 -m venv /opt/myenv
 
 - name: Install pip packages
-  community.general.pipx:
-    name: "{{ pipx_packages }}"
+  ansible.builtin.pip:
+    name: "{{ pip_packages }}"
     state: present
+    virtualenv: /opt/myenv
 
 - name: Create Docker directory
   ansible.builtin.file:
