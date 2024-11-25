@@ -1,8 +1,8 @@
 ---
 username: "<username>"
 
-docker_dir: /mnt/storage/docker_apps
-data_dir: /mnt/storage/data
+docker_dir: /$PATH/docker_apps
+data_dir: /$PATH/data
 
 puid: "<puid>"
 
@@ -21,13 +21,14 @@ packages:
   - curl
   - git
   - python3
-  - python3-pip
+  - pip
   - smartmontools
   - python3-markdown 
   - jq
   - bc
-
-pipx_packages:
+  - python3-venv
+ 
+pip_packages:
   - ansible
   - github3.py
   - docker
@@ -43,3 +44,4 @@ docker_packages:
   - containerd.io
   - docker-buildx-plugin
   - docker-compose-plugin
+
