@@ -6,8 +6,8 @@
     pull: true
     state: started
     restart_policy: unless-stopped
-    security_opt:
-      - seccomp:unconfined
+    security_opts:
+      - "seccomp:unconfined"
     ports:
       - "3000:3000"
       - "3001:3001"
