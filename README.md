@@ -8,7 +8,7 @@ The playbook will update the system, install Docker, and then deploy the Docker 
 I have included a bootstrap script that clones the repo, asks the user for the username and IP address of the server, and then runs the playbook. You can run the script like this:
 
 ```bash
-wget https://raw.githubusercontent.com/gotrekg/homelab-test/refs/heads/master/bootstrap.py && python3 bootstrap.py
+wget https://raw.githubusercontent.com/gotrekg/homelab-setup/refs/heads/master/bootstrap.py && python3 bootstrap.py
 ```
 
 
@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/gotrekg/homelab-test/refs/heads/master/bo
 - Clone the repo to your local machine
 
 ```bash
-git clone https://github.com/gotrekg/homelab-test.git
+git clone https://github.com/gotrekg/homelab-setup.git
 ```
 
 - Update the inventory file with the IP address of your server and the user you want to use to connect to the server and add the path to your ssh key, incase you are not using ssh keys (you should always use ssh keys for security) then you can replace the `ansible_ssh_private_key_file` with `ansible_ssh_pass` and add the password for the user. 
