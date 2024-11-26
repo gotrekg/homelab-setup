@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/rishavnandi/ansible_homelab/master/bootst
 - Clone the repo to your local machine
 
 ```bash
-git clone https://github.com/rishavnandi/ansible_homelab.git
+git clone https://github.com/gotrekg/homelab-test.git
 ```
 
 - Update the inventory file with the IP address of your server and the user you want to use to connect to the server and add the path to your ssh key, incase you are not using ssh keys (you should always use ssh keys for security) then you can replace the `ansible_ssh_private_key_file` with `ansible_ssh_pass` and add the password for the user. 
