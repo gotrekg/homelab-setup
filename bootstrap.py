@@ -15,7 +15,7 @@ pgid = input("Enter pgid of the user: ")
 timezone = input("Enter timezone: ")
 server_ip = input("Enter server IP address: ")
 use_password = input("Are you using a password instead of SSH keys? [y/n]: ")
-domain_name = input("Enter the domain name: ")
+PATH = input("enter Path : ")
 
 # Replace values in vars.yml file
 with open('group_vars/all/vars.yml', 'r') as f:
@@ -25,6 +25,8 @@ content = content.replace('<timezone>', timezone)
 content = content.replace('<server_ip>', server_ip)
 content = content.replace('<puid>', puid)
 content = content.replace('<pgid>', pgid)
+content = content.replace('<PATH>', PATH)
+
 with open('group_vars/all/vars.yml', 'w') as f:
     f.write(content)
 
