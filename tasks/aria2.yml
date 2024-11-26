@@ -1,0 +1,14 @@
+---
+- name: Create Aria2 container
+  community.docker.docker_container:
+    name: Aria2
+    image: hurlenko/aria2-ariang
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "8600:8080"
+    volumes:
+      - /{{ data_dir }}/aria2:/aria2/data
+      - "{{ docker_dir }}/aria2/data:/data"
+ 
