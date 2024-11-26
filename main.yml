@@ -23,6 +23,7 @@
         - overseerr
         - sonarr
         - watchtower
+        - webtop
 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml
