@@ -80,6 +80,7 @@
     mode: "0777"
   loop:
     - "{{ data_dir }}"
+    - "{{ data_dir }}/aria2"
     - "{{ data_dir }}/torrents"
     - "{{ data_dir }}/media"
     - "{{ data_dir }}/media/movies"
@@ -96,19 +97,15 @@
     mode: "0755"
   loop:
     - "{{ docker_dir }}/webtop"
-    - "{{ docker_dir }}/dashdot"
+    - "{{ docker_dir }}/aria2"
     - "{{ docker_dir }}/duplicati"
     - "{{ docker_dir }}/filebrowser"
-    - "{{ docker_dir }}/homarr"
     - "{{ docker_dir }}/portainer"
     - "{{ docker_dir }}/prowlarr"
     - "{{ docker_dir }}/qbittorrent"
     - "{{ docker_dir }}/radarr"
     - "{{ docker_dir }}/requestrr"
     - "{{ docker_dir }}/sonarr"
-    - "{{ docker_dir }}/syncthing"
-    - "{{ docker_dir }}/unmanic"
-    - "{{ docker_dir }}/uptime_kuma"
     - "{{ docker_dir }}/watchtower"
 
 - name: Suppress login messages
