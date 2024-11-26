@@ -13,19 +13,15 @@
     - name: Deploy docker apps
       ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
       loop:
-        - dashdot
-        - duplicati
+        - aria2
+        - flaresolverr
         - filebrowser
-        - homarr
         - portainer
         - prowlarr
         - qbittorrent
         - radarr
-        - requestrr
+        - overseerr
         - sonarr
-        - syncthing
-        - unmanic
-        - uptime_kuma
         - watchtower
 
     - name: Modify ownership of data and docker_apps directories

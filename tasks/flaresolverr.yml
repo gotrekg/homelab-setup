@@ -1,0 +1,9 @@
+- name: Create FlareSolverr container
+  community.docker.docker_container:
+    name: FlareSolverr
+    image: flaresolverr/flaresolverr
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "8191:8191"

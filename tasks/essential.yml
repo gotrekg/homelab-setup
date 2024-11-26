@@ -98,13 +98,12 @@
   loop:
     - "{{ docker_dir }}/webtop"
     - "{{ docker_dir }}/aria2"
-    - "{{ docker_dir }}/duplicati"
     - "{{ docker_dir }}/filebrowser"
     - "{{ docker_dir }}/portainer"
     - "{{ docker_dir }}/prowlarr"
     - "{{ docker_dir }}/qbittorrent"
     - "{{ docker_dir }}/radarr"
-    - "{{ docker_dir }}/requestrr"
+    - "{{ docker_dir }}/overseerr"
     - "{{ docker_dir }}/sonarr"
     - "{{ docker_dir }}/watchtower"
 

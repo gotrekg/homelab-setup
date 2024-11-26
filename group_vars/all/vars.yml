@@ -12,8 +12,6 @@ ip_address: "<server_ip>"
 
 timezone: "<timezone>"
 
-wg_password: "<wg_pass>"
-
 
 packages:
   - unzip
