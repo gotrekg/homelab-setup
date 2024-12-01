@@ -25,7 +25,8 @@ packages:
   - jq
   - bc
   - python3-venv
- 
+  - fwupd
+  
 pip_packages:
   - ansible
   - github3.py
