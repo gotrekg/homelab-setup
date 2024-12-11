@@ -19,7 +19,7 @@
       TITLE: "Webtop"
     devices:
       - "/dev/dri:/dev/dri"
-    shm_size: 2gb       
+    shm_size: 2G  
     volumes:
       - "{{ docker_dir }}/webtop/config:/config"
       - "/var/run/docker.sock:/var/run/docker.sock"
