@@ -2,7 +2,7 @@
 - name: Create watchtower container
   community.docker.docker_container:
     name: watchtower
-    image: containrrr/watchtower
+    image: beatkind/watchtower
     pull: true
     state: started
     restart_policy: unless-stopped
