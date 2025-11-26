@@ -1,0 +1,19 @@
+- name: Create cleanuparr container
+  community.docker.docker_container:
+    name: cleanuparr
+    image: ghcr.io/cleanuparr/cleanuparr:latest
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "11011:11011"
+    env:
+      PUID: "{{ puid }}"
+      PGID: "{{ pgid }}"
+      TZ: "{{ timezone }}"
+      PORT: "11011"
+      BASE_PATH: "/"
+      UMASK: "022"
+    volumes:
+      - "{{ docker_dir }}/cleanuparr/config:/config"
+    

@@ -1,0 +1,14 @@
+---
+- name: Create profilarr container
+  community.docker.docker_container:
+    name: profilarr
+    image: santiagosayshey/profilarr:latest
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    env:
+      TZ: "{{ timezone }}"
+    volumes:
+      - "{{ docker_dir }}/profilarr/data:/config"
+    ports:
+      - "6868:6868"

@@ -1,0 +1,11 @@
+- name: Create ByParr container
+  community.docker.docker_container:
+    name: byparr
+    image: ghcr.io/thephaseless/byparr:latest
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    init: true
+    ports:
+      - "8192:8191"
+    

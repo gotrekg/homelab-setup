@@ -1,9 +1,9 @@
 ---
 username: "<username>"
 
-docker_dir: <PATH>/docker_apps
-data_dir: <PATH>/data
-
+docker_dir: "<PATH>"/docker_apps
+data_dir: "<PATH>"/data
+nvme_dir: "<PATH>"
 puid: "<puid>"
 
 pgid: "<pgid>"

@@ -1,0 +1,22 @@
+---
+- name: Create windows container
+  community.docker.docker_container:
+    name: webtop
+    image: dockurr/windows
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    security_opts:
+      - "seccomp:unconfined"
+    ports:
+      - "8006:8006"
+      - "3389:3389/tcp"
+      - "3389:3389/udp"
+    env:
+      VERSION: "11"
+    devices:
+      - "/dev/kvm"
+      - "/dev/net/tun"
+    volumes:
+      - "{{ nvme_dir: }}/.docker/windows/windows:/config"
+      
