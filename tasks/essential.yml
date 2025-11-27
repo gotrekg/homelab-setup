@@ -80,7 +80,6 @@
     mode: "0777"
   loop:
     - "{{ data_dir }}"
-    - "{{ data_dir }}/aria2"
     - "{{ data_dir }}/torrents"
     - "{{ data_dir }}/media"
     - "{{ data_dir }}/media/movies"
@@ -96,16 +95,18 @@
     group: "{{ username }}"
     mode: "0755"
   loop:
-    - "{{ docker_dir }}/webtop"
-    - "{{ docker_dir }}/aria2"
     - "{{ docker_dir }}/filebrowser"
+    - "{{ nvme_dir: }}/.docker/windows"
     - "{{ docker_dir }}/portainer"
     - "{{ docker_dir }}/prowlarr"
     - "{{ docker_dir }}/qbittorrent"
     - "{{ docker_dir }}/radarr"
-    - "{{ docker_dir }}/overseerr"
     - "{{ docker_dir }}/sonarr"
-    - "{{ docker_dir }}/watchtower"
+    - "{{ docker_dir }}/cleanuparr"
+    - "{{ docker_dir }}/webtop"
+    - "{{ docker_dir }}/profilarr"
+    - "{{ docker_dir }}/jellyfin"
+
 
 - name: Suppress login messages
   ansible.builtin.file:

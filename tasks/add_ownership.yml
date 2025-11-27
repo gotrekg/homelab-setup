@@ -19,3 +19,4 @@
     - "{{ docker_dir }}/cleanuparr"
     - "{{ docker_dir }}/webtop"
     - "{{ docker_dir }}/profilarr"
+    - "{{ docker_dir }}/jellyfin"

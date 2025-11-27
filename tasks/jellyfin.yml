@@ -1,0 +1,25 @@
+---
+- name: Create jellyfin container
+  community.docker.docker_container:
+    name: jellyfin
+    image: lscr.io/linuxserver/jellyfin:latest
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - "8096:8096"
+      - "8920:8920"
+      - "359:7359/udp"
+      - "1900:1900/udp"
+    env:
+      PUID: "{{ puid }}"
+      PGID: "{{ pgid }}"
+      TZ: "{{ timezone }}"
+      JELLYFIN_PublishedServerUrl: http://{{ ip_address }}
+    devices:
+      - "/dev/dri:/dev/dri"
+    volumes:
+      - "{{ docker_dir }}/jellyfin/:/config"
+      - "{{ data_dir }}/media/tv:/data/tvshows"
+      - "{{ data_dir }}/media/movies:/data/movies"
+
