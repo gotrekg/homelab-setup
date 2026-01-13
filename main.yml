@@ -6,9 +6,13 @@
   tasks:
     - name: Update server and install essential packages
       ansible.builtin.include_tasks: tasks/essential.yml
+      tags:
+        - essential
 
     - name: Install docker
       ansible.builtin.include_tasks: tasks/docker.yml
+      tags:
+        - docker
 
     - name: Deploy docker apps
       ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
@@ -25,10 +29,17 @@
         - webtop
         - windows
         - profilarr
+      tags:
+        - apps
+        - "{{ item }}"
                 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml
+      tags:
+        - ownership
 
     - name: Reboot the server
       ansible.builtin.reboot:
         msg: "Rebooting server to finish setup"
+      tags:
+        - reboot
