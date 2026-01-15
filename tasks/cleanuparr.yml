@@ -12,7 +12,7 @@
       PGID: "{{ pgid }}"
       TZ: "{{ timezone }}"
       PORT: "11011"
-      BASE_PATH: "/"
+      BASE_PATH: " "
       UMASK: "022"
     volumes:
       - "{{ docker_dir }}/cleanuparr/config:/config"

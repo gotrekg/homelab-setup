@@ -18,5 +18,5 @@
       - "/dev/kvm"
       - "/dev/net/tun"
     volumes:
-      - "{{ nvme_dir: }}/.docker/windows/windows:/config"
+      - "{{ nvme_dir }}/.docker/windows:/config"
       
