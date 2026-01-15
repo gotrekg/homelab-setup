@@ -14,24 +14,83 @@
       tags:
         - docker
 
-    - name: Deploy docker apps
-      ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
-      loop:
-        - byparr
-        - cleanuparr
-        - flaresolverr
-        - filebrowser
-        - portainer
-        - prowlarr
-        - qbittorrent
-        - radarr
-        - sonarr
-        - webtop
-        - windows
-        - profilarr
+    - name: Deploy byparr
+      ansible.builtin.include_tasks: tasks/byparr.yml
       tags:
         - apps
-        - "{{ item }}"
+        - byparr
+
+    - name: Deploy cleanuparr
+      ansible.builtin.include_tasks: tasks/cleanuparr.yml
+      tags:
+        - apps
+        - cleanuparr
+
+    - name: Deploy flaresolverr
+      ansible.builtin.include_tasks: tasks/flaresolverr.yml
+      tags:
+        - apps
+        - flaresolverr
+
+    - name: Deploy filebrowser
+      ansible.builtin.include_tasks: tasks/filebrowser.yml
+      tags:
+        - apps
+        - filebrowser
+
+    - name: Deploy jellyfin
+      ansible.builtin.include_tasks: tasks/jellyfin.yml
+      tags:
+        - apps
+        - jellyfin
+
+    - name: Deploy portainer
+      ansible.builtin.include_tasks: tasks/portainer.yml
+      tags:
+        - apps
+        - portainer
+
+    - name: Deploy prowlarr
+      ansible.builtin.include_tasks: tasks/prowlarr.yml
+      tags:
+        - apps
+        - prowlarr
+
+    - name: Deploy qbittorrent
+      ansible.builtin.include_tasks: tasks/qbittorrent.yml
+      tags:
+        - apps
+        - qbittorrent
+
+    - name: Deploy radarr
+      ansible.builtin.include_tasks: tasks/radarr.yml
+      tags:
+        - apps
+        - radarr
+
+    - name: Deploy sonarr
+      ansible.builtin.include_tasks: tasks/sonarr.yml
+      tags:
+        - apps
+        - sonarr
+
+    - name: Deploy webtop
+      ansible.builtin.include_tasks: tasks/webtop.yml
+      tags:
+        - apps
+        - webtop
+
+    - name: Deploy windows
+      ansible.builtin.include_tasks: tasks/windows.yml
+      tags:
+        - apps
+        - windows
+
+    - name: Deploy profilarr
+      ansible.builtin.include_tasks: tasks/profilarr.yml
+      tags:
+        - apps
+        - profilarr
                 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml

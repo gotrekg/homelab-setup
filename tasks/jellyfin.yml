@@ -9,7 +9,7 @@
     ports:
       - "8096:8096"
       - "8920:8920"
-      - "359:7359/udp"
+      - "7359:7359/udp"
       - "1900:1900/udp"
     env:
       PUID: "{{ puid }}"
@@ -19,7 +19,7 @@
     devices:
       - "/dev/dri:/dev/dri"
     volumes:
-      - "{{ docker_dir }}/jellyfin/:/config"
+      - "{{ docker_dir }}/jellyfin/config:/config"
       - "{{ data_dir }}/media/tv:/data/tvshows"
       - "{{ data_dir }}/media/movies:/data/movies"
 
