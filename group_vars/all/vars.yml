@@ -3,7 +3,9 @@ username: "<username>"
 
 docker_dir: /<PATH>/docker_apps
 data_dir: /<PATH>/data
-nvme_dir: /<PATH>
+nvme_dir: /<PATH>/
+
+
 puid: "<puid>"
 
 pgid: "<pgid>"
@@ -26,6 +28,7 @@ packages:
   - bc
   - python3-venv
   - fwupd
+  - fastfetch
   
 pip_packages:
   - ansible
