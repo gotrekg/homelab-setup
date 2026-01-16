@@ -6,7 +6,7 @@ import subprocess
 # Clone the repository
 subprocess.run(
     ['git', 'clone', 'https://github.com/gotrekg/homelab-setup.git'])
-os.chdir('ansible_homelab')
+os.chdir('homelab-setup')
 
 # Read user input
 username = input("Enter username: ")
@@ -15,7 +15,8 @@ pgid = input("Enter pgid of the user: ")
 timezone = input("Enter timezone: ")
 server_ip = input("Enter server IP address: ")
 use_password = input("Are you using a password instead of SSH keys? [y/n]: ")
-PATH = input("enter Path : ")
+base_path = input("Enter base path: ")
+nvme_path = input("Enter NVMe base path: ")
 
 # Replace values in vars.yml file
 with open('group_vars/all/vars.yml', 'r') as f:
@@ -25,7 +26,8 @@ content = content.replace('<timezone>', timezone)
 content = content.replace('<server_ip>', server_ip)
 content = content.replace('<puid>', puid)
 content = content.replace('<pgid>', pgid)
-content = content.replace('<PATH>', PATH)
+content = content.replace('<PATH>', base_path)
+content = content.replace('<NVME_PATH>', nvme_path)
 
 with open('group_vars/all/vars.yml', 'w') as f:
     f.write(content)

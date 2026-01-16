@@ -3,7 +3,7 @@ username: "<username>"
 
 docker_dir: /<PATH>/docker_apps
 data_dir: /<PATH>/data
-nvme_dir: /<PATH>/
+nvme_dir: /<NVME_PATH>/
 
 
 puid: "<puid>"
