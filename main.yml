@@ -13,13 +13,7 @@
       ansible.builtin.import_tasks: tasks/docker.yml
       tags:
         - docker
-
-    - name: Deploy byparr
-      ansible.builtin.import_tasks: tasks/byparr.yml
-      tags:
-        - apps
-        - byparr
-
+   
     - name: Deploy cleanuparr
       ansible.builtin.import_tasks: tasks/cleanuparr.yml
       tags:
@@ -91,7 +85,13 @@
       tags:
         - apps
         - profilarr
-                
+        
+    - name: Deploy byparr
+      ansible.builtin.import_tasks: tasks/byparr.yml
+      tags:
+        - apps
+        - byparr
+
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.import_tasks: tasks/add_ownership.yml
       tags:
