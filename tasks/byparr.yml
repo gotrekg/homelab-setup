@@ -1,7 +1,7 @@
-- name: Create ByParr container
+- name: Create ByParr container - takes long time
   community.docker.docker_container:
     name: byparr
-    image: ghcr.io/thephaseless/byparr:latest
+    image: ghcr.io/thephaseless/byparr:main
     pull: true
     state: started
     restart_policy: unless-stopped
